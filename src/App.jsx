@@ -21,17 +21,13 @@ function App() {
     const ctx = gsap.context(() => {
       // Animate sections on scroll
       gsap.utils.toArray('.section-header').forEach((header) => {
-        gsap.from(header, {
-          scrollTrigger: {
-            trigger: header,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse',
-          },
-          y: 60,
-          opacity: 0,
-          duration: 1,
-          ease: 'power3.out',
-        })
+        gsap.fromTo(header,
+          { y: 60, opacity: 0 },
+          {
+            scrollTrigger: { trigger: header, start: 'top 95%', toggleActions: 'play none none none' },
+            y: 0, opacity: 1, duration: 1, ease: 'power3.out',
+          }
+        )
       })
     }, containerRef)
 

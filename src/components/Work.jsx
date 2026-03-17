@@ -10,32 +10,36 @@ const projects = [
     name: 'Procesync',
     domain: 'procesync.ai',
     image: '/procesync.png',
-    description: 'Keeps your data in sync across tools. Works in the background.',
-    link: 'https://procesync.ai'
+    description: 'Keeps your data in sync across tools. Works in the background so you don\'t have to.',
+    link: 'https://procesync.ai',
+    featured: true,
   },
   {
     id: 2,
     name: 'ProcessPay',
     domain: 'processpay.ai',
     image: '/processpay.png',
-    description: 'Payment infrastructure for startups. Handles the boring stuff so you don\'t have to.',
-    link: 'https://processpay.ai'
+    description: 'Payment infrastructure for startups. Handles the boring money stuff so you don\'t have to.',
+    link: 'https://processpay.ai',
+    featured: true,
   },
   {
     id: 3,
     name: 'Eventzity',
     domain: 'eventzity.com',
     image: '/eventzity.png',
-    description: 'AI-powered event planning platform. Find venues, vendors, and make events happen.',
-    link: 'https://eventzity.com/'
+    description: 'India\'s first event service marketplace. Plan it, book it, celebrate it.',
+    link: 'https://eventzity.com/',
+    featured: false,
   },
   {
     id: 4,
-    name: 'Sorting Visualizer',
-    domain: 'sorting-visualizer-tan-tau.vercel.app',
-    image: '/sorting-visualizer.png',
-    description: 'Interactive visualization of sorting algorithms. Watch them in action.',
-    link: 'https://sorting-visualizer-tan-tau.vercel.app/'
+    name: 'Apply Surge',
+    domain: 'applysurge.com',
+    image: '/applysearch.png',
+    description: 'Your job search on autopilot. Finds jobs, fills applications, answers screening questions — while you prep for interviews.',
+    link: 'https://applysurge.com',
+    featured: false,
   },
 ]
 
@@ -45,29 +49,37 @@ export default function Work() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Header animation
-      gsap.from('.work-header', {
-        scrollTrigger: {
-          trigger: '.work-header',
-          start: 'top 88%',
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.7,
-        ease: 'power2.out'
-      })
+      gsap.fromTo('.work-header',
+        { y: 30, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: '.work-header',
+            start: 'top 95%',
+            toggleActions: 'play none none none',
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: 'power2.out'
+        }
+      )
 
       // Staggered card reveal
-      gsap.from('.project-card', {
-        scrollTrigger: {
-          trigger: '.projects-grid',
-          start: 'top 85%',
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out'
-      })
+      gsap.fromTo('.project-card',
+        { y: 40, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: '.projects-grid',
+            start: 'top 95%',
+            toggleActions: 'play none none none',
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out'
+        }
+      )
     }, workRef)
 
     return () => ctx.revert()
@@ -79,7 +91,7 @@ export default function Work() {
         <div className="work-header">
           <span className="work-label">01</span>
           <h2 className="work-title">Selected Work</h2>
-          <p className="work-subtitle">Projects I'm proud of</p>
+          <p className="work-subtitle">stuff I've built</p>
         </div>
 
         <div className="projects-grid">
@@ -89,7 +101,7 @@ export default function Work() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="project-card"
+              className={project.featured ? 'project-card project-card--featured' : 'project-card'}
             >
               <div className="project-image">
                 <img src={project.image} alt={project.name} />

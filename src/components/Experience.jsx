@@ -7,9 +7,15 @@ gsap.registerPlugin(ScrollTrigger)
 const timeline = [
   {
     date: 'Jun 2025 — Present',
-    title: 'Software Engineer',
+    title: 'Software Developer',
     company: 'August Innovate',
-    description: 'Architecting document processing pipelines for financial data using GCP and GenAI. Built a visual workflow editor with React Flow for configuring complex data flows.',
+    description: 'Building workflow engines, document pipelines, and LLM-powered extraction systems. The kind of backend work where you process 200+ docs a day and serve enterprise clients like Blinkit and Zomato.',
+  },
+  {
+    date: 'Jul 2021 — May 2025',
+    title: 'B.Tech Computer Science',
+    company: 'VIT Vellore',
+    description: 'Four years of learning, building, and breaking things. Graduated with an 8.74 CGPA and an Air Force scholarship.',
   },
 ]
 
@@ -18,17 +24,21 @@ export default function Experience() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.timeline-item', {
-        scrollTrigger: {
-          trigger: '.timeline',
-          start: 'top 85%',
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: 'power2.out',
-      })
+      gsap.fromTo('.timeline-item',
+        { y: 30, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: '.timeline',
+            start: 'top 95%',
+            toggleActions: 'play none none none',
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power2.out',
+        }
+      )
     }, expRef)
 
     return () => ctx.revert()
@@ -39,7 +49,7 @@ export default function Experience() {
       <div className="section-header">
         <span className="section-number">04</span>
         <h2 className="section-title">Experience</h2>
-        <p className="section-subtitle">Where I've worked</p>
+        <p className="section-subtitle">the journey so far</p>
       </div>
 
       <div className="timeline">

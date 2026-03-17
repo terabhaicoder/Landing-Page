@@ -13,19 +13,8 @@ const services = [
         <path d="M9 21V9" />
       </svg>
     ),
-    title: 'Web Development',
-    description: 'Building performant, accessible websites and web applications using modern technologies and best practices.',
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 2v4m0 12v4M2 12h4m12 0h4" />
-        <path d="m4.93 4.93 2.83 2.83m8.48 8.48 2.83 2.83m-2.83-14.14 2.83 2.83m-14.14 8.48 2.83 2.83" />
-      </svg>
-    ),
-    title: 'Interactive Experiences',
-    description: 'Creating immersive 3D experiences, animations, and interactive installations that captivate and engage.',
+    title: 'Backend Systems',
+    description: 'APIs, microservices, event-driven pipelines. The stuff that runs behind the curtain and makes everything work.',
   },
   {
     icon: (
@@ -35,8 +24,19 @@ const services = [
         <path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    title: 'UI/UX Design',
-    description: 'Designing intuitive interfaces and seamless user experiences that balance beauty with usability.',
+    title: 'Full-Stack Apps',
+    description: 'From React frontends to Node/FastAPI backends. End-to-end products that actually ship to real users.',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v4m0 12v4M2 12h4m12 0h4" />
+        <path d="m4.93 4.93 2.83 2.83m8.48 8.48 2.83 2.83m-2.83-14.14 2.83 2.83m-14.14 8.48 2.83 2.83" />
+      </svg>
+    ),
+    title: 'AI & Automation',
+    description: 'LLM integrations, browser automation, intelligent agents. Making machines do the boring stuff.',
   },
   {
     icon: (
@@ -46,8 +46,8 @@ const services = [
         <line x1="12" y1="22.08" x2="12" y2="12" />
       </svg>
     ),
-    title: 'Creative Technology',
-    description: 'Exploring the intersection of art and technology through generative design, WebGL, and creative coding.',
+    title: 'Data Pipelines',
+    description: 'Kafka, Redis, PostgreSQL — moving data from A to B without losing anything along the way.',
   },
 ]
 
@@ -59,17 +59,13 @@ export default function Services() {
       const cards = gsap.utils.toArray('.service-card')
 
       cards.forEach((card, i) => {
-        gsap.from(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse',
-          },
-          x: i % 2 === 0 ? -100 : 100, // Alternate directions
-          opacity: 0,
-          duration: 1,
-          ease: 'expo.out', // Snappier easing
-        })
+        gsap.fromTo(card,
+          { x: i % 2 === 0 ? -100 : 100, opacity: 0 },
+          {
+            scrollTrigger: { trigger: card, start: 'top 95%', toggleActions: 'play none none none' },
+            x: 0, opacity: 1, duration: 1, ease: 'expo.out',
+          }
+        )
       })
     }, servicesRef)
 
@@ -81,7 +77,7 @@ export default function Services() {
       <div className="section-header">
         <span className="section-number">03</span>
         <h2 className="section-title">Services</h2>
-        <p className="section-subtitle">What I can do for you</p>
+        <p className="section-subtitle">what I actually do</p>
       </div>
 
       <div className="services-grid">

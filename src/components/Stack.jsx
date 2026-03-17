@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Stack() {
-  const techs = ['JavaScript', 'Python', 'React', 'Node.js', 'AWS', 'MongoDB', 'Postgres', 'Redis']
+  const techs = ['Python', 'TypeScript', 'React', 'Node.js', 'FastAPI', 'PostgreSQL', 'Redis', 'Kafka', 'Docker', 'LangChain', 'Next.js', 'MongoDB']
   const stackRef = useRef(null)
   const trackRef = useRef(null)
 
