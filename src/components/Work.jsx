@@ -37,7 +37,7 @@ const projects = [
     name: 'Apply Surge',
     domain: 'applysurge.com',
     image: '/applysearch.png',
-    description: 'Your job search on autopilot. Finds jobs, fills applications, answers screening questions — while you prep for interviews.',
+    description: 'Your job search on autopilot. Finds jobs, fills applications, answers screening questions while you prep for interviews.',
     link: 'https://applysurge.com',
     featured: false,
   },

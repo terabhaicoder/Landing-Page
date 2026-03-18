@@ -48,10 +48,10 @@ export default function About() {
         <div className="about-content">
           <div className="about-text">
             <p className="about-intro">
-              I'm a 22-year-old software engineer who graduated from <span className="highlight">VIT Vellore</span> and moved straight to <span className="highlight">Bangalore</span> to build things at startups.
+              I'm a 23-year-old software engineer who graduated from <span className="highlight">VIT Vellore</span> and moved straight to <span className="highlight">Bangalore</span> to build things at startups.
             </p>
             <p className="about-body">
-              I love backend systems. The messier the problem, the more fun it is. APIs, event pipelines, data extraction, automation, that's my happy place. I ship fast, break things occasionally, and fix them before anyone notices.
+              I love backend systems. The messier the problem, the more fun it is. APIs, event pipelines, data extraction, automation. I ship fast, break things occasionally, and fix them before anyone notices.
             </p>
             <p className="about-body">
               Outside of work, I'm always building something on the side. ApplySurge, Eventzity... if there's a problem that annoys me enough, there's probably a repo for it somewhere.
