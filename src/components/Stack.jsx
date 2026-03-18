@@ -46,7 +46,7 @@ export default function Stack() {
   return (
     <section className="stack" id="stack" ref={stackRef}>
       <div className="section-header">
-        <span className="section-number">05</span>
+        <span className="section-number">04</span>
         <h2 className="section-title">Tech Stack</h2>
         <p className="section-subtitle">Tools I work with</p>
       </div>

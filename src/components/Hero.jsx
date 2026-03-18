@@ -377,7 +377,9 @@ export default function Hero() {
       <div className="hero-worked-with">
         <span className="worked-label">Worked with</span>
         <div className="worked-logos">
-          <a href="https://eventzity.com" target="_blank" rel="noopener noreferrer" className="worked-logo">Eventzity</a>
+          <span className="worked-logo">Eventzity</span>
+          <span className="worked-divider">/</span>
+          <span className="worked-logo">ApplySurge</span>
           <span className="worked-divider">/</span>
           <span className="worked-logo">ProcessPay</span>
           <span className="worked-divider">/</span>
